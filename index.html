@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seasons</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <style>
+    html {
+      box-sizing: border-box;
+      font-family: 'Pacifico', cursive;
+      font-size: 16px;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0
+    }
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+      margin: 0;
+      padding: 0;
+    }
+
+    .seasons {
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .summer { background-image:url('img/summer.jpg'); }
+    .autumn { background-image:url('img/autumn.jpg') }
+    .winter { background-image:url('img/winter.jpg'); }
+    .spring { background-image:url('img/spring.jpg'); }
+
+    .season {
+      width: 100%;
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+      color: white;
+      background-size: cover;
+      background-position: center;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      font-size: 25px;
+
+      transition:
+        font-size .7s ease-in-out,
+        flex .7s ease-in-out;
+    }
+
+    .season::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3));
+    }
+
+    .season p {
+      z-index: 1;
+    }
+    
+    /*will add it with js*/
+    .open {
+      font-size: 50px;
+      flex:5;
+    }
+  </style>
+
+
+  <div class="seasons">
+    <div class="season summer">
+      <p>Summer</p>
+    </div>
+    <div class="season autumn">
+      <p>Autumn</p>
+    </div>
+    <div class="season winter">
+      <p>Winter</p>
+    </div>
+    <div class="season spring">
+      <p>Spring</p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
